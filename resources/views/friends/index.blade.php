@@ -1,0 +1,1 @@
+<h1>Hello friends view</h1>
