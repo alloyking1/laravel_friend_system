@@ -16,6 +16,11 @@ class FriendStoreController extends Controller
     public function __invoke(User $user, Request $request)
     {
 
+
+        if ($request->user()->hasPendingFriendRequestFor($user)) {
+            return back();
+        }
+
         $request->user()->pendingFriendsTo()->attach($user);
         return back();
     }

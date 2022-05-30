@@ -43,6 +43,12 @@ class User extends Authenticatable
     ];
 
 
+    // check if friend request is sent already
+    public function hasPendingFriendRequestFor(user $user)
+    {
+        return $this->pendingFriendsTo->contains($user);
+    }
+
     // relationships
 
     public function friendsTo()
